@@ -13,6 +13,13 @@ function App() {
       </div>
       <div className="App-body">
         <p>Login to access the full dashboard</p>
+        <form action="" className="form">
+          <label htmlFor="email">Email:</label>
+          <input type="text" id='email'/>
+          <label htmlFor="password">Password:</label>
+          <input type="text" id="password" />
+          <button>OK</button>
+        </form>
       </div>
       <div className="App-footer">
         <p>{getFullYear()} {getFooterCopy()} Copyright 2020 - holberton School</p>
