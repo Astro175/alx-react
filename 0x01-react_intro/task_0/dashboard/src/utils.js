@@ -9,4 +9,8 @@ const getFooterCopy = (isIndex) => {
     else return "Holberton School main dashboard"
 }
 
-module.exports = { getFooterCopy, getFullYear };
+const getLatestNotification = () => {
+    return {__html: `<strong>Urgent requirement</strong> - complete by EOD`}
+}
+
+module.exports = { getFooterCopy, getFullYear, getLatestNotification};
