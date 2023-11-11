@@ -22,7 +22,7 @@ function App() {
         </form>
       </div>
       <div data-testid="App-footer" className="App-footer">
-        <p>{getFullYear()} {getFooterCopy()} Copyright 2020 - holberton School</p>
+        <p>{getFullYear} {getFooterCopy} Copyright 2020 - holberton School</p>
       </div>
     </div> 
   );
