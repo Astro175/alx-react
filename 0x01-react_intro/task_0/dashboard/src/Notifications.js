@@ -23,7 +23,6 @@ function Notifications() {
                 <li data-priority="default">New course available</li>
                 <li data-priority="urgent">New resume available</li>
                 <li dangerouslySetInnerHTML={getLatestNotification()}/>
-
             </ul>
         </div>
     );

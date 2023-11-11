@@ -7,11 +7,11 @@ function App() {
   return (
     <div>
       <Notifications />
-      <div className="App-header">
+      <div data-testid="App-header" className="App-header">
         <img src={logo} alt="" className='logo-img'/>
         <h1>School dashboard</h1>
       </div>
-      <div className="App-body">
+      <div data-testid="App-body" className="App-body">
         <p>Login to access the full dashboard</p>
         <form action="" className="form">
           <label htmlFor="email">Email:</label>
@@ -21,7 +21,7 @@ function App() {
           <button>OK</button>
         </form>
       </div>
-      <div className="App-footer">
+      <div data-testid="App-footer" className="App-footer">
         <p>{getFullYear()} {getFooterCopy()} Copyright 2020 - holberton School</p>
       </div>
     </div> 
