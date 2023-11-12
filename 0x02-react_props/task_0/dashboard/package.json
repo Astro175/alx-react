@@ -37,5 +37,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@cfaester/enzyme-adapter-react-18": "^0.7.1"
   }
 }

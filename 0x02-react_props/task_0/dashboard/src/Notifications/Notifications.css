@@ -1,0 +1,19 @@
+.Notifications {
+    border: 5px solid red;
+    border-style: dotted;
+    padding: 1em;
+    position: relative;
+}
+
+.close {
+    width: 20px;
+    height: 20px;
+}
+
+li[data-notification-type='default'] {
+    color: blue;
+}
+
+li[data-notification-type='urgent'] {
+    color: red;
+}
