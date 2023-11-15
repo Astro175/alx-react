@@ -3,6 +3,8 @@
     border-style: dotted;
     padding: 1em;
     position: relative;
+    width: 30%;
+    margin-left: 40em;
 }
 
 .close {

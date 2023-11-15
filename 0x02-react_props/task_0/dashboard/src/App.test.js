@@ -1,5 +1,6 @@
 import { shallow } from 'enzyme';
 import App from './App';
+import CourseList from './CourseList/CourseList';
 import Footer from './footer/Footer';
 import Header from './header/header';
 import Login from './login/Login';
@@ -20,3 +21,12 @@ describe('App Component', () => {
     expect(wrapper.find(Footer)).toHaveLength(1);
   });
 });
+
+describe("Verifies Login component displays or CourseList does", () => {
+  it("Verify Login component is not included", () => {
+    const wrapper = shallow(<App isLoggedIn={false} />)
+    const exists = wrapper.exists(CourseList);
+
+    
+  })
+})
