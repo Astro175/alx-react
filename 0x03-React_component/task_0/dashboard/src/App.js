@@ -32,6 +32,15 @@ const listCourses = [
 
 class App extends Component {
 
+  componentDidMount() {
+    document.addEventListener('keydown', (event) => {
+      if (event.ctrlKey && event.key === 'h') {
+        console.log(`Logging you out`)
+        this.props.logOut()
+      }
+    })
+  }
+
   render() {
 
     return (<div>
@@ -53,11 +62,13 @@ class App extends Component {
 }
 
 App.propTypes = {
-  isLoggedIn: PropTypes.bool
+  isLoggedIn: PropTypes.bool,
+  logOut: PropTypes.func
 }
 
 App.defaultProps = {
-  isLoggedIn: false
+  isLoggedIn: false,
+  logOut: function () {}
 }
 
 export default App;
