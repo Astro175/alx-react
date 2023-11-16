@@ -1,8 +1,9 @@
 import './CourseList.css';
-import CourseListRow from "./CourseListRow";
+import CourseListRow from './CourseListRow';
+import courseShape from './CourseShape';
 
-const CourseList = () => {
-    return ( 
+const CourseList = ({listCourses}) => {
+    return (
         <table className="CourseList">
             <thead>
                 <CourseListRow textFirstCell="Available courses" isHeader={true}/>
@@ -10,13 +11,23 @@ const CourseList = () => {
                 textSecondCell="Credit" isHeader={true} />
             </thead>
             <tbody>
-                <CourseListRow textFirstCell="ES6" textSecondCell="60" isHeader={false} />
-                <CourseListRow textFirstCell="Webpack" textSecondCell="20" isHeader={false} />
-                <CourseListRow textFirstCell="React" textSecondCell="40" isHeader={false} />
-
+                {listCourses.length === 0 ? (<CourseListRow textFirstCell='No courses available' isHeader={true}/>)
+                :
+                 listCourses.map(course => (
+                    <CourseListRow key={course.id} textFirstCell={course.name} textSecondCell={course.credit}/>
+                )
+                )}
             </tbody>
         </table>
      );
+}
+
+CourseList.propType = {
+    listCourses: [courseShape]
+}
+
+CourseList.defaultProps = {
+    listCourses: []
 }
  
 export default CourseList;

@@ -1,10 +1,9 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { getLatestNotification } from '../utils';
 import NotificationItem from './NotificationItem';
 import './Notifications.css';
 import icon from './close.jpg';
-function Notifications({ displayDrawer }) {
+function Notifications({ displayDrawer, listNotifications }) {
     const mystyle = {
         position: "absolute",
         backgroundColor: "white",
@@ -31,9 +30,14 @@ function Notifications({ displayDrawer }) {
                 <img src={icon} alt="" className='close' />
             </button>
             <ul>
-                <NotificationItem type="default" value="New course available"/>
-                <NotificationItem type="urgent" value="New resume available"/>
-                <NotificationItem type="" html={{__html:getLatestNotification()}}/>
+                {listNotifications.length === 0 ? (
+                <li>
+                    No new notification for now
+                </li>) : (listNotifications.map(item => (
+                    <NotificationItem key={item.id} html={item.html} type={item.type}
+                    value={item.value}
+                    />
+                )))}
             </ul>
         </div>) : (<></>)}
         </>
@@ -41,7 +45,8 @@ function Notifications({ displayDrawer }) {
 }
 
 Notifications.propTypes = {
-    displayDrawer: PropTypes.bool
+    displayDrawer: PropTypes.bool,
+    listNotifications: PropTypes.array
 }
 
 Notifications.defaultProps = {
